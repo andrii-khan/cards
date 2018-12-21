@@ -1,0 +1,130 @@
+@import "normalize";
+@import "layout";
+@import "elements";
+
+body{
+	background-color: #ccc;
+	font-size: 20px;
+	color: #000;
+}
+
+/* Layout */
+.ba-container{
+	padding: 70px 20px;
+	max-width: 1200px;
+}
+
+.ba-card {
+	margin: 10px;
+	width: 150px;
+	height: 225px;
+	transform-style:preserve-3d;
+	position: relative;
+	cursor: pointer;
+	perspective: 250px;
+
+	&__front {
+		height: 100%;
+		// background: url('../img/card.jpg') 50% no-repeat;
+		background-size: cover;
+		background-color: #fff;
+		backface-visibility: hidden;
+		border-radius: 20px;
+		transition: transform 0.7s ease-in-out, background 0.7s ease-in;
+		padding: 10px 5px;
+	}
+	&__back {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background: url(../img/2.png) 50% no-repeat;
+		background-size: cover;
+		transform:rotateY(-180deg);
+		border-radius: 20px;
+		backface-visibility: hidden;
+		transition: transform 0.7s ease-in-out, background 0.7s ease-in;
+	}
+	
+	&:hover .ba-card__back {
+		transform: rotateY(0deg);
+	}
+	&:hover .ba-card__front {
+		transform: rotateY(180deg);
+
+	}
+}
+.ba-karta {
+	display: flex;
+	text-align: center;
+	height: 100%;
+	svg {
+		fill: currentColor;
+	}
+	&__mast-top {
+		text-align: center;
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__telo {
+		display: flex;
+		justify-content: space-between;
+		flex-grow: 2;
+		padding: 20px 10px;
+	}
+	&__mast-bot{
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__left {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	&__right {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	&__midle {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	&__img {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	
+}
+.ba-rotate {
+	transform: rotate(180deg);
+}
+.koloda {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+
+.red {
+	color: red;
+}
+.parallax {
+	height: 100%;
+	background: url('../img/bg5.jpg');
+	background-attachment: fixed;
+	background-position: center;
+ 	background-repeat: no-repeat;
+ 	background-size: cover;
+}
+.ba-hide {
+	display: none;
+}
